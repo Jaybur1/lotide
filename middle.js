@@ -17,15 +17,15 @@ const assertArraysEqual = (arr1, arr2) => {
 
 const middle = (array) => {
   let mostMiddle = [];
-  if (array.length % 2 !== 0 && array.length > 2){
+  if (array.length % 2 !== 0 && array.length > 2) {
     mostMiddle.push(Math.ceil(array.length / 2));
-  } else if(array.length % 2 === 0 && array.length > 2) {
-    mostMiddle.push((array.length / 2), (array.length / 2) + 1)
+  } else if (array.length % 2 === 0 && array.length > 2) {
+    mostMiddle.push((array.length / 2), (array.length / 2) + 1);
   }
   return mostMiddle;
 };
 
-//TEST 
+//TEST
 
 assertArraysEqual(middle([1,2,3,4]),[2,3]);
 assertArraysEqual(middle([1,2,3,4,5]),[3]);
