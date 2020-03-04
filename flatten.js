@@ -11,7 +11,15 @@ const eqArrays = (arr1, arr2) => {
 const assertArraysEqual = (arr1, arr2) => {
   eqArrays(arr1, arr2) ? console.log(`✅ ✅ ✅ Assertion Passed: ${arr1} === ${arr2}`) : console.log(`❌❌❌ Assertion Failed: ${arr1} !== ${arr2}`);
 };
-//TEST
 
-assertArraysEqual([1,2,3],["1",2,3]); //fails
-assertArraysEqual([1,2,3],[1,2,3]);   // passes
+const flatten = (array) => {
+  let newArr = [];
+  array.forEach(element => {
+    Array.isArray(element) ? newArr.push(...element) : newArr.push(element);
+    console.log(newArr);
+  });
+  return newArr;
+};
+
+//TEST
+assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]),[1, 2, 3, 4, 5, 6]);
