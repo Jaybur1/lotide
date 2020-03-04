@@ -7,11 +7,13 @@ const assertEqual = (actual, expected) => {
 
 const eqArrays = (arr1, arr2) => {
   let isEqual = true;
+  if (arr1.length !== arr2.length) isEqual = false;
   arr1.forEach((element, index) => {
     if (element !== arr2[index]) isEqual = false;
   });
   return isEqual;
 };
+
 
 
 
