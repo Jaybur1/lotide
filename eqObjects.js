@@ -18,7 +18,7 @@ const eqArrays = (arr1, arr2) => {
 const compareCheck = (obj1, obj2) => {
   let checkResult = false;
   for (const key in obj1) {
-    if (Array.isArray(obj1[key])) {
+    if (Array.isArray(obj1[key]) && Array.isArray(obj2[key])) {
       eqArrays(obj1[key],obj2[key]) ? checkResult = true : checkResult = false;
     } else {
       obj1[key] === obj2[key] ? (checkResult = true) : (checkResult = false);
