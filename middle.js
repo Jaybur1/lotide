@@ -1,6 +1,3 @@
-//function that takes in an array and returns the middle-most element(s)
-//for arrays with 1 or 2 elements it return empty array
-
 const middle = array => {
   let mostMiddle = [];
   if (array.length % 2 !== 0 && array.length > 2) {

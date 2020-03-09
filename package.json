@@ -1,13 +1,14 @@
 {
-  "name": "lotide",
+  "name": "@jaybur1/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "A mini clone of the Lodash library.This library was published for learning purposes. It is not intended for use in production-grade software.",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
   },
   "dependencies": {
-    "chai": "^4.2.0"
+    "chai": "^4.2.0",
+    "lotide": "^1.0.1"
   },
   "devDependencies": {
     "mocha": "^7.1.0"
