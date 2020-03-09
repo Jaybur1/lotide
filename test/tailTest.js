@@ -1,19 +1,24 @@
-const assertEqual = require("../assertEqual");
-const tail = require('../tail');
+const tail = require("../tail");
+const assert = require("chai").assert;
 
+describe("#tail", () => {
+  it("should return an array with a length of 2, the first element should be Lighthouse and second = Labs", () => {
+    const result = tail(["Hello", "Lighthouse", "Labs"]);
 
-// Test Case 1: Check the returned array elements
-const result = tail(["Hello", "Lighthouse", "Labs"]);
+    assert.strictEqual(result.length, 2);
+    assert.strictEqual(result[0], "Lighthouse");
+    assert.strictEqual(result[1], "Labs");
+  });
 
-assertEqual(result.length, 2); // ensure we get back two elements
-assertEqual(result[0], "Lighthouse"); // ensure first element is "Lighthouse"
-assertEqual(result[1], "Labs"); // ensure second element is "Labs"
+  it("should not mutate the original array", () => {
+    const words = ["Yo Yo", "Lighthouse", "Labs"];
+    tail(words);
+    assert.strictEqual(words.length, 3);
+  });
 
-// Test Case 2: Check the original array
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words);
-assertEqual(words.length, 3);
+  it('should return undefined when passed in an array with one or less elements', () => {
+    assert.isUndefined(tail([])[0], undefined);
+    assert.isUndefined(tail([1])[0], undefined);
+  });
+});
 
-//Test Case 3: Check empty arrays and array with 1 element
-assertEqual(tail([])[0], undefined);
-assertEqual(tail([1])[0], undefined);
