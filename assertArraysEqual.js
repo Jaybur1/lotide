@@ -7,7 +7,5 @@ const assertArraysEqual = (arr1, arr2) => {
 };
 
 module.exports = assertArraysEqual;
-//TEST
 
-// assertArraysEqual([1,2,3],["1",2,3]); //fails
-// assertArraysEqual([1,2,3],[1,2,3]);   // passes
+
