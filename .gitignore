@@ -1,0 +1,4 @@
+#ignore all .a files
+*.a
+#ignore node_modules
+/node_modules
